@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>LCS</title>
+	<link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+
+	<div id="inputBlock">
+		<input id="inputA" class="subs" title="subsequence A">
+		<input id="inputB" class="subs" title="subsequence B">
+		<select onchange="selectValue()" id="testList">
+			<option></option>
+			<option>Test #1</option>
+			<option>Test #2</option>
+			<option>Test #3</option>
+			<option>Test #4</option>
+			<option>Test #5</option>
+		</select>
+		<br>
+		<a href="#inputA" class="button" onclick="getValue()" title="find longest common subsequence">Find LCS</a>
+	</div>
+	
+
+	<div id="resultBlock" style="visibility: hidden;">
+		<p id="A"></p>
+		<p id="B"></p>
+		<p id="LCS"> <a ></a></p>
+		<p id="sub_length"></p>
+
+		<div id="table"></div>
+		<div class="controlPanel">
+			<p>
+				Step: <input id="stepId" title="step number"> <a href="#setStep" id="setStep" class="button" onclick="setStep()" title="set step">SET</a>
+			</p>
+			<a href="#firstStep" id="firstStep" onclick="firstStep()"><img src="IMG/first.png" title="first step" class="controlButton"></a>
+			<a href="#prevStep" id="prevStep" onclick="prevStep()"><img src="IMG/previous.png" title="previous step" class="controlButton"></a>
+			<a href="#nextStep" onclick="playSteps()"><img src="IMG/play.png" title="play" class="controlButton"></a>
+			<a href="#nextStep" onclick="stopPlayingSteps()"><img src="IMG/pause.png" title="stop" class="controlButton"></a>
+			<a href="#nextStep" id="nextStep" onclick="nextStep()"><img src="IMG/next.png" title="next step" class="controlButton"></a>
+			<a href="#lastStep" id="lastStep" onclick="lastStep()"><img src="IMG/last.png" title="last step" class="controlButton"></a>
+			<p>Playback speed: <input id="speed" value="1" title="playback speed"></p>
+		</div>
+	</div>
+
+	<script src="JS/Source.js"></script>
+
+</body>
+</html>

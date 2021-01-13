@@ -1,0 +1,68 @@
+*{
+	text-align: center;
+	font-family: Arial;
+}
+input, select{
+	border-radius: 0.4vw;
+	border-width: 0.15vw;
+}
+table{
+	border-collapse: collapse;
+	font-size: 22pt;
+	margin-left: auto;
+	margin-right: auto;
+}
+td{
+	width: 60px;
+	height: 60px;
+}
+th, td {
+    border: 1px solid black;
+    padding: 5px;
+}
+p, input, a, select{
+	font-size: 1vw;
+}
+
+.subs{
+	margin-bottom: 1.5vw;
+	margin-left: 0.5vw;
+}
+
+#stepId{
+	width: 2.8vw;
+}
+#speed{
+	width: 2.8vw;
+}
+#resultBlock{
+	margin-top: 3vw;
+}
+
+.controlPanel{
+	display: inline-block;
+}
+.controlButton{
+	width: 1.5vw;
+	height: 1.5vw;
+	margin-left: 0.6vw;
+}
+.controlButton:active{
+	width: 1.4vw;
+	height: 1.4vw;
+}
+
+.button {
+  text-decoration: none;
+  padding: 0.8vh 0.5vw;
+  border: 0.15vw solid black;
+  border-radius: 0.4vw;
+  color: black;
+}
+.button:hover {
+  background: black;
+  color: white;
+}
+.button:active{
+	padding: 0.7vh 0.4vw;
+}
