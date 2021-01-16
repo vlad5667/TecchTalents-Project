@@ -75,7 +75,7 @@ function hoverLCS(A, B){
 	let stringA = document.getElementById("A");
 	removeChilds(stringA);
 
-    stringA.appendChild(document.createTextNode('Subsequence A: '));
+    stringA.appendChild(document.createTextNode('Sequence A: '));
     for (let i = 0, j = 0; i < A.length; i++){
     	let symb = document.createElement('a');
     	symb.appendChild(document.createTextNode(A[i]));
@@ -90,7 +90,7 @@ function hoverLCS(A, B){
     let stringB = document.getElementById("B");
     removeChilds(stringB);
 
-    stringB.appendChild(document.createTextNode('Subsequence B: '));
+    stringB.appendChild(document.createTextNode('Sequence B: '));
     for (let i = 0, j = 0; i < B.length; i++){
     	let symb = document.createElement('a');
     	symb.appendChild(document.createTextNode(B[i]));
