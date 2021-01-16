@@ -269,6 +269,10 @@ function drawTable(){
 
 function setStep(){
 	stepId = Number(document.getElementById("stepId").value);
+	if (stepId != document.getElementById("stepId").value){
+		alert("Ошибка, номер шага должен быть числом.");
+		return;
+	}
 	if (stepId < 0){
 		stepId = 0;
 	}
@@ -297,6 +301,14 @@ function nextStep(){
 
 function playSteps(){
 	let speed = document.getElementById("speed").value;
+	if (speed != Number(speed)){
+		alert("Ошибка, скорость проигрывания должна быть числом.");
+		return;
+	}
+	if (speed < 0 || speed > 100){
+		alert("Ошибка, скорость проигрывания должна быть в диапазоне [0, 100].");
+		return;
+	}
 	intervalId = setInterval(nextStep, 1000 / speed);
 }
 
