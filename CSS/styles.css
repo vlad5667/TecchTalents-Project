@@ -8,17 +8,16 @@ input, select{
 }
 table{
 	border-collapse: collapse;
-	font-size: 22pt;
+	font-size: 18pt;
 	margin-left: auto;
 	margin-right: auto;
 }
 td{
-	width: 60px;
-	height: 60px;
+	width: 50px;
+	height: 50px;
 }
 th, td {
     border: 1px solid black;
-    padding: 5px;
 }
 p, input, a, select{
 	font-size: 1vw;

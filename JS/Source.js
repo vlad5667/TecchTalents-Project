@@ -1,4 +1,4 @@
-var lcs, steps, stepId, intervalId, resultPath = new Array();
+var lcs, steps, stepId, intervalId, resultPath = new Array(), redPath = new Array();
 var table = document.getElementById("table");
 
 
@@ -58,6 +58,8 @@ function findLCS(A, B, i, j, directs){
         return;
     }
     if (directs[i][j] == "diag"){
+    		redPath[i][0] = 1;
+	redPath[0][j] = 1;
         findLCS(A, B, i - 1, j - 1, directs);
         lcs += A[i - 1];
     } else if(directs[i][j] == "up"){
@@ -146,10 +148,12 @@ function LCS(A, B){
 		ans[i] = new Array();
 		directs[i] = new Array();
 		resultPath[i] = new Array();
+		redPath[i] = new Array()
 		for (let j = 0; j < m + 1; j++){
 			ans[i][j] = 0;
 			directs[i][j] = "up";
 			resultPath[i][j] = 0;
+			redPath[i][j] = 0;
 			steps[0][i + 1][j + 1] = 0 + directs[i][j][0];
 		}
 	}
@@ -205,11 +209,15 @@ function printMatrix(matrix){
         for (let j = 0; j < matrix[i].length; j++) {
         	let color, back = 'background: white;';
         	let td = document.createElement('td');
-
-        	if (i == 0 || j == 0){
+        	if (i == 0 && j != 0 && redPath[0][j - 1] == 1 && stepId == steps.length - 1){
+        		color = "color: red; font-weight: bold;";
+        	}
+        	else if (i != 0 && j == 0 && redPath[i - 1][0] == 1 && stepId == steps.length - 1){
+        		color = "color: red; font-weight: bold;";
+        	}
+        	else{
         		color = "color: #4A235A; font-weight: bold;";
         	}
-
         	if (stepId == steps.length - 1 && i != 0 && j != 0 && resultPath[i - 1][j - 1] == 1){
         		back = 'background-color: rgba(249, 231, 159, 0.4);';
         	}
@@ -289,8 +297,7 @@ function nextStep(){
 
 function playSteps(){
 	let speed = document.getElementById("speed").value;
-	let time = (steps.length - stepId - 1) * 700 * (1 / speed);
-	intervalId = setInterval(nextStep, 700 * (1 / speed));
+	intervalId = setInterval(nextStep, 1000 / speed);
 }
 
 
